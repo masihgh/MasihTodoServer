@@ -13,16 +13,12 @@ const TodoSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  bg_color: {
-    type: String,
-    required: false,
-  },
   isBookmark: {
     type: Boolean,
     required: false,
     default: false,
   },
-  isHidden: {
+  isDone: {
     type: Boolean,
     required: false,
     default: false,

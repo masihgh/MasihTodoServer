@@ -45,10 +45,11 @@ const updateTodo = async (req, res) => {
 const deleteTodo = async (req, res) => {
     const { id: TodoID } = req.params;
     try {
-      const Todo = await Todo.findOneAndDelete({ _id: TodoID });
+      await Todo.findOneAndDelete({ _id: TodoID });
   
-      res.status(200).json( Todo );
+      res.status(200).json({delete:true});
     } catch (error) {
+		console.log(error);
       res.status(500).json({ msg: error });
     }
   };
